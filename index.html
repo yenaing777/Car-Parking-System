@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parking Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <h2>Parking Lot</h2>
+    </div>
+    <div class="main">
+        <h3 class="main_title">Fill Car Details for Parking</h3>
+        <div class="form_container">
+            <form class="car_form" id="car_form" action="">
+                <label class="form_name" for="owner">Owner</label>
+                <input class="form_input" type="text" id="owner" placeholder="Enter Owner Name">
+                <label class="form_name" for="car_name">Car Name</label>
+                <input class="form_input" type="text" id="car_name" placeholder="Enter Car Name">
+                <label class="form_name" for="license_plate">License Plate</label>
+                <input class="form_input" type="text" id="license_plate" placeholder="e.g. 11-11-AA">
+                <label class="form_name" for="start_date">Start Date</label>
+                <input class="form_input" type="date" id="start_date">
+                <label class="form_name" for="end_date">End Date</label>
+                <input class="form_input" type="date" id="end_date">
+                <button class="submit_btn" id="submit_btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="table_section">
+        <div class="table_wrapper">
+            <h3 class="table_title">List of cars in Car Parking</h3>
+            <input class="search_bar" id="search_bar" type="text" placeholder="Search..." oninput="searchTable()">
+            <table class="car_table" id="car_table">
+                <thead>
+                    <tr>
+                        <th>Ower</th>
+                        <th>Car</th>
+                        <th>License Plate</th>
+                        <th>Entry Date</th>
+                        <th>Exit Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="car_table_body">
+                    <tr>
+                        <td>Su Su</td>
+                        <td>Hondai</td>
+                        <td>11-22-AA</td>
+                        <td>2022-10-16</td>
+                        <td>2022-10-18</td>
+                        <td><button class="delete_btn" onclick="deleteRow(this)"><i class="fa-solid fa-x"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>Aung Aung</td>
+                        <td>BMW</td>
+                        <td>23-33-AA</td>
+                        <td>2022-10-11</td>
+                        <td>2022-10-15</td>
+                        <td><button class="delete_btn" onclick="deleteRow(this)"><i class="fa-solid fa-x"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
